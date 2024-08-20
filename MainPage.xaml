@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RxConverteriOS.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            Margin="0,40,0,0">
+            <Label
+                Text="Enter Rx"
+                FontSize="30"
+                FontAttributes="Bold"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Text=""
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       Text="SPH"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="2"
+                       Text="CYL"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="3"
+                       Text="AXIS"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Label Grid.Row="1"
+                       Text="OD:"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="1"
+                       Grid.Column="1"
+                       Placeholder="SPH"
+                       Text=""
+                       FontSize="25"
+                       x:Name="RightSphere"
+                       Keyboard="Default" 
+                       VerticalOptions="Center" 
+                       MaxLength="6"/>
+                <Entry Grid.Row="1"
+                       Grid.Column="2"
+                       Placeholder="CYL"
+                       Text=""
+                       FontSize="25"
+                       x:Name="RightCyl"
+                       Keyboard="Default" 
+                       VerticalOptions="Center"
+                       MaxLength="6"/>
+                <Entry Grid.Row="1"
+                       Grid.Column="3"
+                       Placeholder="AXIS"
+                       Text=""
+                       FontSize="25"
+                       x:Name="RightAxis"
+                       Keyboard="Default" 
+                       VerticalOptions="Center" 
+                       MaxLength="3"/>
+                <Label Grid.Row="2"
+                       Grid.ColumnSpan="1"
+                       Text="OS:"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="2"
+                       Grid.Column="1"
+                       Placeholder="SPH"
+                       Text=""
+                       FontSize="25"
+                       x:Name="LeftSphere"
+                       Keyboard="Default"  
+                       VerticalOptions="Center" 
+                       MaxLength="6"/>
+                <Entry Grid.Row="2"
+                       Grid.Column="2"
+                       Placeholder="CYL"
+                       Text=""
+                       FontSize="25"
+                       x:Name="LeftCyl"
+                       Keyboard="Default"  
+                       VerticalOptions="Center"
+                       MaxLength="6"/>
+                <Entry Grid.Row="2"
+                       Grid.Column="3"
+                       Placeholder="AXIS"
+                       Text=""
+                       FontSize="25"
+                       x:Name="LeftAxis"
+                       Keyboard="Default"  
+                       VerticalOptions="Center" 
+                       MaxLength="3"/>
+            </Grid>
+            <ImageButton
+                x:Name="ConvertBtn"
+                BackgroundColor="#512BD4"
+                Source="converticon.png" 
+                SemanticProperties.Hint="Converts Cylinder notation"
+                Clicked="OnConvertClicked"
+                HorizontalOptions="Center"
+                HeightRequest="55"
+                WidthRequest="55"
+                CornerRadius="5"/>
+            <Label
+                Text="Converted Rx"
+                FontSize="30"
+                FontAttributes="Bold"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition /> 
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Text=""
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1"
+                       FontSize="20"
+                       Text="SPH"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="2"
+                       FontSize="20"
+                       Text="CYL"
+                       VerticalOptions="Center" />
+                <Label Grid.Column="3"
+                       FontSize="20"
+                       Text="AXIS"
+                       VerticalOptions="Center" />
+                <Label Grid.Row="1"
+                       Text="OD:"
+                       FontSize="20"
+                       VerticalOptions="Center" />  
+                <Entry Grid.Row="1"
+                       Grid.Column="1"
+                       Placeholder="SPH"
+                       FontSize="25"
+                       IsReadOnly="True"
+                       x:Name="ResultSphereR"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="1"
+                       Grid.Column="2"
+                       Placeholder="CYL"
+                       FontSize="25"
+                       IsReadOnly="True"
+                       x:Name="ResultCylR"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="1"
+                       Grid.Column="3"
+                       Placeholder="AXIS"
+                       FontSize="25"
+                       IsReadOnly="True"
+                       x:Name="ResultAxisR"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Label Grid.Row="2"
+                       Grid.ColumnSpan="1"
+                       Text="OS:"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="2"
+                       Grid.Column="1"
+                       Placeholder="SPH"
+                       FontSize="25"
+                       IsReadOnly="True"
+                       x:Name="ResultSphereL"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="2"
+                       Grid.Column="2"
+                       Placeholder="CYL"
+                       FontSize="25"
+                       IsReadOnly="True"
+                       x:Name="ResultCylL"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="2"
+                       Grid.Column="3"
+                       Placeholder="AXIS"
+                       FontSize="25"
+                       IsReadOnly="True"
+                       x:Name="ResultAxisL"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </Grid>
+            <ImageButton
+                x:Name="ClearBtn"
+                Source="clearicon.png" 
+                SemanticProperties.Hint="Clears Entries"
+                Clicked="OnClearClicked"
+                HorizontalOptions="Center"
+                BackgroundColor="#cc0000"
+                HeightRequest="55"
+                WidthRequest="55"
+                CornerRadius="6"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
